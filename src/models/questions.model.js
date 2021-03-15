@@ -172,13 +172,13 @@ let answer = b ?? 'default';`,
             2: `default`,
             3: `JS кинет ошибку`
         },
-        correct_answer: [1],
+        correct_answer: [2],
     },
     {
         id: 14,
         question: `Чему будет равна переменная answer в результате выполнения кода?`,
         pre: `let b = 0;
 let a = b ?? 42';`,
-        correct_answer: ['42'],
+        correct_answer: '42',
     },
 ];

@@ -37,7 +37,6 @@ module.exports = {
                     return acc + current_question.answers[val.toString()] + `\n`;
                 }, '');
             } else {
-                console.log(body_answer[0]);
                 is_correct = current_question.correct_answer === body_answer[0].toString();
                 correct_answers = current_question.correct_answer
             }
