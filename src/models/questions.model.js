@@ -172,7 +172,7 @@ let answer = b ?? 'default';`,
             2: `default`,
             3: `JS кинет ошибку`
         },
-        correct_answer: [0],
+        correct_answer: [1],
     },
     {
         id: 14,
