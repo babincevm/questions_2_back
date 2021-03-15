@@ -26,6 +26,6 @@ require('./src/routes').forEach(routeName => {
 });
 
 (async () => {
-    await app.listen(dotenv.PORT);
+    await app.listen(process.env.PORT);
     console.log(`Server is listening on ${dotenv.PORT}`);
 })();

@@ -1,5 +1,4 @@
 const {User} = require('../models/');
-const dotenv = require('dotenv').config().parsed;
 const jwt = require('jsonwebtoken');
 
 module.exports = {
@@ -7,7 +6,7 @@ module.exports = {
         if (await User.find(current => current.username === username && current.password === password)) {
             const token = await jwt.sign(
                 {username},
-                dotenv.ACCESS_TOKEN,
+                process.env.ACCESS_TOKEN,
                 {
                     expiresIn: `20m`,
                 }
@@ -28,7 +27,7 @@ module.exports = {
     async authenticateJWT(req, res, next) {
         const token = req.headers.authorization;
         if (token) {
-            await jwt.verify(token, dotenv.ACCESS_TOKEN, (err, user) => {
+            await jwt.verify(token, process.env.ACCESS_TOKEN, (err, user) => {
                 if (err) {
                     return res.sendStatus(403);
                 }
