@@ -23,7 +23,10 @@ module.exports = {
             correct_answers,
             body_answer,
             is_correct,
-            is_array_equals = (a, b) => a.reduce((acc, val) => acc && b.includes(val.toString()), true); // сравнение массивов
+            is_array_equals = (a, b) => {
+            if (a.length !== b.length) return false;
+                return a.reduce((acc, val) => acc && b.includes(val.toString()), true)
+            }; // сравнение массивов
 
 
         let answers = await Object.keys(body).reduce((acc, question_id, index) => {
